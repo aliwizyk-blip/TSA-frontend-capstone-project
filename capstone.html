@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="capstone.css">
+</head>
+
+<body class="min-h-screen bg-slate-950
+text-white">
+    <main class="mx-auto min-h-screen max-w-7xl px-4 py-6 sm:px-8">
+
+        <h1 class="text-2xl font-bold">
+            Planet Dashboard
+
+        </h1>
+        <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <h2 class="text-lg font-semibold">Planets</h2>
+                <div class="flex items-center gap-2">
+                    <label for="planet-select" class="text-sm font-medium">Select a planet:</label>
+                    <select id="planet-select"
+                        class="rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        <option value="">--Choose a planet--</option>
+                        <option value="mercury">Mercury</option>
+                        <option value="venus">Venus</option>
+                        <option value="earth">Earth</option>
+                        <option value="mars">Mars</option>
+                        <option value="jupiter">Jupiter</option>
+                        <option value="saturn">Saturn</option>
+                        <option value="uranus">Uranus</option>
+                        <option value="neptune">Neptune</option>
+                    </select>
+                </div>
+        </section>
+        <section id="Planet-feature" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
+            <h2 class="mb-6 text-2xl font-bold">Earth </h2>
+            <div class="flex flex-col items-center gap-6 
+            sm:flex-row">
+                <div class="shrink-0">
+                    <img id="planet-image" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=400"
+                        alt="Planet Earth" class="h-40 w-40 rounded-full object-cover">
+                </div>
+                <div class="flex-1 text-center sm:text-left">
+                    <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-sky-400">
+                        Terrestial Planet
+                    </p>
+                    <h2 id="planet-name" class="mb-3 text-3xl font-bold sm:text-4xl">
+                        Earth
+                    </h2>
+                    <p id="planet-description" class="max-w-2xl leading-7 text-slate-300">
+                        Earth is our home planet and the third planet from the sun.
+                        It is the only planet currently known to support life.
+                    </p>
+
+
+                </div>
+            </div>
+        </section>
+        <h2 class="mb-6 text-2xl font-bold text-white">Planetary Facts at a Glance</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full min-w-[600px] text-left text-sm text-slate-300">
+
+                <thead class="bg-slate-800 text-sky-400 uppercase">
+                    <tr>
+                        <th scope="col" class="px-4 py-3">Planet</th>
+                        <th scope="col" class="px-4 py-3">Diameter (km)</th>
+                        <th scope="col" class="px-4 py-3">Distance from sun (millions of km)</th>
+                    </tr>
+                </thead>
+                <tbody id="planet-table-body" class="divide-y divide-slate-800">
+                    <tr class="bg-slate-800\70">
+                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
+                            Terrestrial Planets
+                        </th>
+
+                    </tr>
+                    <tr class="bg-slate-800\70">
+                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
+                            Giant Planets
+                            </th>
+                        
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="capstone.js"></script>
+</body>
+
+</html>
