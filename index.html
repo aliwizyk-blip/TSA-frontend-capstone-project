@@ -13,11 +13,37 @@
 <body class="min-h-screen bg-slate-950
 text-white">
     <main class="mx-auto min-h-screen max-w-7xl px-4 py-6 sm:px-8">
+        <header class="navbar-container container">
+            <div class="nav-inner">
 
-        <h1 class="text-2xl font-bold">
-            Planet Dashboard
+                <a href="#home" class="logo">
+                    <img src="/" alt="">
+                </a>
 
-        </h1>
+                <!-- My on/off switch with two states unchecked → menu closed and checked   → menu open -->
+                <input type="checkbox" id="nav-toggle" class="a11y-toggle">
+
+                <label for="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
+                <span class="theme-switch__track">
+
+                    <!-- sun icon -->
+                    <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
+                     LIGHT ☀
+                    </span>
+
+                    <!-- Moon icon -->
+                    <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
+                    DARK ☾
+                    </span>
+
+                    <span class="theme-switch__thumb"></span>
+
+                </span>
+                </label>
+            </div>
+        </header>
+
+      
         <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <h2 class="text-lg font-semibold">Planets</h2>

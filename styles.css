@@ -1,0 +1,68 @@
+/* "Start with a clean slate. Make sizing predictable, and remove the browser's default spacing." */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; 
+  /* Enabling smooth scroll */
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { 
+  color: inherit; /*This means the a tag inherits theh background color */
+  text-decoration: none; 
+}
+
+ul { list-style: none; }
+
+:root {
+  /* ---- color: dark mode (default) ---- */
+  --bg: #10151a;
+  --surface: #171e24;
+  --surface-2: #1e2830;
+  --ink: #edeae2;
+  --muted: #98a3ab;
+  --accent: #6fe3c4;
+  --accent-ink: #0c1512;
+  --accent-2: #f2c14e;
+  --border: #263038;
+  --shadow: 190 60% 4%;
+
+  /* ---- type ---- */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* ---- spacing scale ---- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  /* ---- shape / motion ---- */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --speed: 0.25s;
+}
+
+#theme-toggle:checked ~ .site {
+  --bg: #f5f3ed;
+  --surface: #ffffff;
+  --surface-2: #eeece3;
+  --ink: #1b1f1d;
+  --muted: #5b655f;
+  --accent: #3e6259;      /* pine — primary accent */
+  --accent-ink: #ffffff;  /* text color that sits on top of --accent */
+  --accent-2: #d99a2b;    /* gold — secondary accent, used sparingly */
+  --border: #ded9c9;
+  --shadow: 220 20% 20%;  /* HSL channel triplet, used inside hsl() below */
+}
