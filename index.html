@@ -16,14 +16,23 @@
         <div class="nav-inner">
 
             <a href="#home" class="logo">
-                <img src="/images/logo.png" alt="">
+                <img id="site-logo" src="/images/logo.png" alt="">
             </a>
 
             <!-- My on/off switch with two states unchecked → menu closed and checked   → menu open -->
-            <input type="checkbox" id="nav-toggle" class="a11y-toggle">
+            <input 
+                type="checkbox"
+                id="theme-toggle"
+                class="a11y-toggle"
+            >
 
-            <label for="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
-                <span class="theme-switch__track">
+            <label 
+                for="theme-toggle" 
+                class="theme-switch"
+                aria-label="Toggle dark mode"
+            >
+
+                <span>
 
                     <!-- sun icon -->
                     <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
@@ -32,7 +41,8 @@
 
                     <!-- Moon icon -->
                     <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
-                    DARK ☾
+                    DARK 
+                    <img src="/images/Path.png" alt="">
                     </span>
 
                     <span class="theme-switch__thumb"></span>
@@ -114,7 +124,7 @@
             </table>
         </div> -->
 
-    <script src="capstone.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
