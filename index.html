@@ -7,28 +7,27 @@
     <title>Planet Dashboard</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="capstone.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="min-h-screen bg-slate-950
-text-white">
-    <main class="mx-auto min-h-screen max-w-7xl px-4 py-6 sm:px-8">
-        <header class="navbar-container container">
-            <div class="nav-inner">
+<body>
+    
+    <header class="navbar-container container">
+        <div class="nav-inner">
 
-                <a href="#home" class="logo">
-                    <img src="/" alt="">
-                </a>
+            <a href="#home" class="logo">
+                <img src="/images/logo.png" alt="">
+            </a>
 
-                <!-- My on/off switch with two states unchecked → menu closed and checked   → menu open -->
-                <input type="checkbox" id="nav-toggle" class="a11y-toggle">
+            <!-- My on/off switch with two states unchecked → menu closed and checked   → menu open -->
+            <input type="checkbox" id="nav-toggle" class="a11y-toggle">
 
-                <label for="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
+            <label for="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
                 <span class="theme-switch__track">
 
                     <!-- sun icon -->
                     <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
-                     LIGHT ☀
+                        LIGHT <img src="/images/Theme Icon.png" alt="">
                     </span>
 
                     <!-- Moon icon -->
@@ -39,12 +38,12 @@ text-white">
                     <span class="theme-switch__thumb"></span>
 
                 </span>
-                </label>
-            </div>
-        </header>
+            </label>
+        </div>
+    </header>
 
       
-        <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
+        <!-- <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <h2 class="text-lg font-semibold">Planets</h2>
                 <div class="flex items-center gap-2">
@@ -113,8 +112,8 @@ text-white">
                     </tr>
                     </tbody>
             </table>
-        </div>
-    </main>
+        </div> -->
+
     <script src="capstone.js"></script>
 </body>
 
