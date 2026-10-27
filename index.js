@@ -88,3 +88,21 @@ function setupSearchFilter() {
 
 }
 fetchPlanets();
+
+const themeToggle = document.querySelector("#theme-toggle");
+const logo = document.querySelector("#site-logo");
+
+const lightLabel = document.querySelector(".theme-switch__icon--sun");
+const darkLabel = document.querySelector(".theme-switch__icon--moon");
+
+themeToggle.addEventListener("change", () => {
+    const isLight = themeToggle.checked;
+
+    // Toggle the theme
+    document.documentElement.classList.toggle("light-theme", isLight);
+
+    // Swap the logo
+    logo.src = isLight
+        ? "/images/logo_black.png"
+        : "/images/logo.png";
+});

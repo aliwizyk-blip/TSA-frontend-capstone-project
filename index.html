@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+    <header class="navbar-container container">
+        <div class="nav-inner">
+
+            <a href="#home" class="logo">
+                <img id="site-logo" src="/images/logo.png" alt="">
+            </a>
+
+            <!-- My on/off switch with two states unchecked → menu closed and checked   → menu open -->
+            <input 
+                type="checkbox"
+                id="theme-toggle"
+                class="a11y-toggle"
+            >
+
+            <label 
+                for="theme-toggle" 
+                class="theme-switch"
+                aria-label="Toggle dark mode"
+            >
+
+                <span>
+
+                    <!-- sun icon -->
+                    <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
+                        LIGHT <img src="/images/Theme Icon.png" alt="">
+                    </span>
+
+                    <!-- Moon icon -->
+                    <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
+                    DARK 
+                    <img src="/images/Path.png" alt="">
+                    </span>
+
+                    <span class="theme-switch__thumb"></span>
+
+                </span>
+            </label>
+        </div>
+    </header>
+
+      
+        <!-- <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <h2 class="text-lg font-semibold">Planets</h2>
+                <div class="flex items-center gap-2">
+                    <label for="planet-select" class="text-sm font-medium">Select a planet:</label>
+                    <select id="planet-select"
+                        class="rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                        <option value="">--Choose a planet--</option>
+                        <option value="mercury">Mercury</option>
+                        <option value="venus">Venus</option>
+                        <option value="earth">Earth</option>
+                        <option value="mars">Mars</option>
+                        <option value="jupiter">Jupiter</option>
+                        <option value="saturn">Saturn</option>
+                        <option value="uranus">Uranus</option>
+                        <option value="neptune">Neptune</option>
+                    </select>
+                </div>
+        </section>
+        <section id="Planet-feature" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
+            <h2 class="mb-6 text-2xl font-bold">Earth </h2>
+            <div class="flex flex-col items-center gap-6 
+            sm:flex-row">
+                <div class="shrink-0">
+                    <img id="planet-image" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=400"
+                        alt="Planet Earth" class="h-40 w-40 rounded-full object-cover">
+                </div>
+
+                <div class="content-wrapper">
+                    <p class="planet-type-badge">Terrestrial Planet</p>
+
+                    <h2 id="planet-name" class="planet-display-name">
+                        Earth
+                    </h2>
+
+                    <p id="planet-description" class="planet-info-text">
+                        Earth is our home planet and the third planet from
+                        the sun. It is the only planet currently known to
+                        support life.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planetary Facts Table -->
+        <h2 class="table-heading">Planetary Facts at a Glance</h2>
+        <p class="table-description">
+            Below is a comparative table of the major planets in our solar system. The data highlights 
+            key physical properties used by astronomers and researchers to classify and study these celestial bodies wordwide.</p>
+            <h1 class="table-subheading">Data about the Planets of our Solar System {planetary facts taken from NASA}</h1>
+
+        <div class="table-scroll-container">
+            <table class="data-table">gi
+                <thead>
+                    <tr>
+                        <th scope="col">Planet</th>
+                        <th scope="col">Diameter (km)</th>
+                        <th scope="col">
+                            Distance from sun (millions of km)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="planet-table-body" class="divide-y divide-slate-800">
+                    <tr class="bg-slate-800\70">
+                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
+                            Terrestrial Planets
+                        </th>
+
+                    </tr>
+                    <tr class="bg-slate-800\70">
+                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
+                            Giant Planets
+                            </th>
+                        
+                    </tr>
+                    </tbody>
+            </table>
+        </div> -->
+
+    <script src="index.js"></script>
+</body>
+</html>

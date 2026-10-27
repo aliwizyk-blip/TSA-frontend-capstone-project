@@ -1,0 +1,220 @@
+/* "Start with a clean slate. Make sizing predictable, and remove the browser's default spacing." */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; 
+  /* Enabling smooth scroll */
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { 
+  color: inherit; /*This means the a tag inherits theh background color */
+  text-decoration: none; 
+}
+
+ul { list-style: none; }
+
+:root {
+  /* ---- color: dark mode (default) ---- */
+  --bg: #141D2F;
+  --surface: #171e24;
+  --surface-2: #1e2830;
+  --ink: #edeae2;
+  --muted: #98a3ab;
+  --accent: #6fe3c4;
+  --accent-ink: #0c1512;
+  --accent-2: #f2c14e;
+  --border: #263038;
+  --shadow: 190 60% 4%;
+
+  /* ---- type ---- */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* ---- spacing scale ---- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  /* ---- shape / motion ---- */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --speed: 0.25s;
+}
+
+/* Light theme */
+:root.light-theme {
+  --bg: #f5f3ed;
+  --surface: #ffffff;
+  --surface-2: #eeece3;
+  --ink: #1b1f1d;
+  --muted: #5b655f;
+  --accent: #3e6259;
+  --accent-ink: #ffffff;
+  --accent-2: #d99a2b;
+  --border: #ded9c9;
+  --shadow: 220 20% 20%;
+}
+
+
+/* A custom text-selection color is a pseudo-element, not a pseudo-class —
+   ::selection styles whatever text the user highlights. */
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* A base typography and layout utilities below */
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--ink);
+  transition:
+    background-color var(--speed) var(--ease),
+    color var(--speed) var(--ease);
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+
+p { color: var(--muted); }
+
+.container {
+   /* width: min(1120px, 100% - 3rem); */
+   width: 1440px;
+   height: 1832px;
+   padding: 130px 355px;
+}
+
+/* Hide the checkbox visually but keep it accessible */
+.a11y-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Make the whole switch clickable */
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Switch track */
+.theme-switch__track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Keep text and image on one horizontal line */
+.theme-switch__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+/* Theme icon image */
+.theme-switch__icon img {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* Dark theme is the default */
+.theme-switch__icon--sun {
+  display: inline-flex;
+}
+
+.theme-switch__icon--moon {
+  display: none;
+}
+
+/* Light theme is active */
+#theme-toggle:checked + .theme-switch
+.theme-switch__icon--sun {
+  display: none;
+}
+
+#theme-toggle:checked + .theme-switch
+.theme-switch__icon--moon {
+  display: inline-flex;
+}
+
+/* Keyboard accessibility */
+.a11y-toggle:focus-visible + .theme-switch {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONISIVENESS */
+/* Target devices from 0px up to 767px (Phones) */
+/* @media (max-width: 767px) {
+  .container {
+    padding: 12px 16px;
+  }
+} */
+
+
+/* Tablet and up */
+/* @media (min-width: 768px) {
+  .container {
+    padding: 16px 20px;
+  }
+} */
