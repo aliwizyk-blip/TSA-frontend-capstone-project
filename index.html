@@ -7,18 +7,53 @@
     <title>Planet Dashboard</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="capstone.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="min-h-screen bg-slate-950
-text-white">
-    <main class="mx-auto min-h-screen max-w-7xl px-4 py-6 sm:px-8">
+<body>
+    
+    <header class="navbar-container container">
+        <div class="nav-inner">
 
-        <h1 class="text-2xl font-bold">
-            Planet Dashboard
+            <a href="#home" class="logo">
+                <img id="site-logo" src="/images/logo.png" alt="">
+            </a>
 
-        </h1>
-        <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
+            <!-- My on/off switch with two states unchecked → menu closed and checked   → menu open -->
+            <input 
+                type="checkbox"
+                id="theme-toggle"
+                class="a11y-toggle"
+            >
+
+            <label 
+                for="theme-toggle" 
+                class="theme-switch"
+                aria-label="Toggle dark mode"
+            >
+
+                <span>
+
+                    <!-- sun icon -->
+                    <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
+                        LIGHT <img src="/images/Theme Icon.png" alt="">
+                    </span>
+
+                    <!-- Moon icon -->
+                    <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
+                    DARK 
+                    <img src="/images/Path.png" alt="">
+                    </span>
+
+                    <span class="theme-switch__thumb"></span>
+
+                </span>
+            </label>
+        </div>
+    </header>
+
+      
+        <!-- <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <h2 class="text-lg font-semibold">Planets</h2>
                 <div class="flex items-center gap-2">
@@ -87,9 +122,9 @@ text-white">
                     </tr>
                     </tbody>
             </table>
-        </div>
-    </main>
-    <script src="capstone.js"></script>
+        </div> -->
+
+    <script src="index.js"></script>
 </body>
 
 </html>
