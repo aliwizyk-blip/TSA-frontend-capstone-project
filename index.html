@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +50,25 @@
             </label>
         </div>
     </header>
+<!-- search bar -->
+    <section class="hero-section" container>
 
+    <div class="search_input-container">
+
+ 
+           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.6084 0C16.458 0 21.2178 4.74645 21.2178 10.5801C21.2177 13.1889 20.2631 15.5782 18.6875 17.4248L23.8018 22.5137C24.142 22.8525 24.1432 23.4035 23.8047 23.7441C23.6349 23.9146 23.4118 24 23.1885 24C22.9665 24 22.745 23.9157 22.5752 23.7471L17.4541 18.6514C15.6049 20.2135 13.216 21.1592 10.6084 21.1592C4.75913 21.159 0.000198647 16.4135 0 10.5801C0 4.74654 4.75896 0.000139792 10.6084 0ZM10.6084 1.73926C5.7178 1.7394 1.73926 5.70538 1.73926 10.5801C1.73948 15.4543 5.71794 19.4198 10.6084 19.4199C13.0218 19.4199 15.2117 18.4528 16.8125 16.8887C16.8278 16.8705 16.8443 16.8531 16.8613 16.8359C16.8813 16.8159 16.9025 16.797 16.9238 16.7793C18.5019 15.1825 19.4784 12.9931 19.4785 10.5801C19.4785 5.70529 15.4991 1.73926 10.6084 1.73926Z" fill="#0079FF"/>
+</svg>
+
+
+
+<input type="text" placeholder="Search for a planet..." id="search_input">
+        <button id="search_button">Search</button>  
+    
+    
+
+    </div>
+</section>
       
         <!-- <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -80,31 +97,39 @@
                     <img id="planet-image" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=400"
                         alt="Planet Earth" class="h-40 w-40 rounded-full object-cover">
                 </div>
-                <div class="flex-1 text-center sm:text-left">
-                    <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-sky-400">
-                        Terrestial Planet
-                    </p>
-                    <h2 id="planet-name" class="mb-3 text-3xl font-bold sm:text-4xl">
+
+                <div class="content-wrapper">
+                    <p class="planet-type-badge">Terrestrial Planet</p>
+
+                    <h2 id="planet-name" class="planet-display-name">
                         Earth
                     </h2>
-                    <p id="planet-description" class="max-w-2xl leading-7 text-slate-300">
-                        Earth is our home planet and the third planet from the sun.
-                        It is the only planet currently known to support life.
+
+                    <p id="planet-description" class="planet-info-text">
+                        Earth is our home planet and the third planet from
+                        the sun. It is the only planet currently known to
+                        support life.
                     </p>
-
-
                 </div>
             </div>
         </section>
-        <h2 class="mb-6 text-2xl font-bold text-white">Planetary Facts at a Glance</h2>
-        <div class="overflow-x-auto">
-            <table class="w-full min-w-[600px] text-left text-sm text-slate-300">
 
-                <thead class="bg-slate-800 text-sky-400 uppercase">
+        <!-- Planetary Facts Table -->
+        <h2 class="table-heading">Planetary Facts at a Glance</h2>
+        <p class="table-description">
+            Below is a comparative table of the major planets in our solar system. The data highlights 
+            key physical properties used by astronomers and researchers to classify and study these celestial bodies wordwide.</p>
+            <h1 class="table-subheading">Data about the Planets of our Solar System {planetary facts taken from NASA}</h1>
+
+        <div class="table-scroll-container">
+            <table class="data-table">gi
+                <thead>
                     <tr>
-                        <th scope="col" class="px-4 py-3">Planet</th>
-                        <th scope="col" class="px-4 py-3">Diameter (km)</th>
-                        <th scope="col" class="px-4 py-3">Distance from sun (millions of km)</th>
+                        <th scope="col">Planet</th>
+                        <th scope="col">Diameter (km)</th>
+                        <th scope="col">
+                            Distance from sun (millions of km)
+                        </th>
                     </tr>
                 </thead>
                 <tbody id="planet-table-body" class="divide-y divide-slate-800">
@@ -126,5 +151,4 @@
 
     <script src="index.js"></script>
 </body>
-
 </html>
