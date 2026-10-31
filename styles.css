@@ -109,7 +109,6 @@ p {
 }
 
 .container {
-  /* width: min(1120px, 100% - 3rem); */
   width: 1440px;
   height: 1832px;
   padding: 130px 355px;
@@ -117,7 +116,6 @@ p {
 
 .wrapper {
   width: 730px;
-
 }
 
 /* Hide the checkbox visually but keep it accessible */
@@ -219,7 +217,7 @@ p {
 
   height: 69px;
   justify-content: space-between;
-  padding: 16PX 8px;
+  padding: 16px var(--space-2) 16px var(--space-3);
   background: var(--surface);
   box-shadow: 0px 16px 30px -10px hsl(var(--shadow) / 0.2);
   width: 730px;
@@ -238,22 +236,22 @@ p {
 }
 
 .search_input-container input::placeholder {
-  color: #757575;
-  font-size: 16px;
+  color: var(--muted);
+  opacity: 70%;
+  font-size: 18px;
 }
 
 #search_button {
   background-color: #0079FF;
-  color: white;
+  color: #FFFFFF;
   border: none;
-  padding: 16px 8px;
+  padding: 16px 16px;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  width: 107px;
-  height: 48px;
+  width: 107px; */
 }
 
 #search_button:hover {
