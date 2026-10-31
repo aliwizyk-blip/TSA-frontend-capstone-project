@@ -31,7 +31,7 @@ ul {
 :root {
   /* ---- color: dark mode (default) ---- */
   --bg: #141D2F;
-  --surface: #171e24;
+  --surface: #1E2A47;
   --surface-2: #1e2830;
   --ink: #edeae2;
   --muted: #98a3ab;
@@ -42,8 +42,7 @@ ul {
   --shadow: 190 60% 4%;
 
   /* ---- type ---- */
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: 'Space Mono', monospace;
   --font-mono: "JetBrains Mono", monospace;
 
   /* ---- spacing scale ---- */
@@ -63,7 +62,7 @@ ul {
 
 /* Light theme */
 :root.light-theme {
-  --bg: #f5f3ed;
+  --bg: #F6F8FF;
   --surface: #ffffff;
   --surface-2: #eeece3;
   --ink: #1b1f1d;
@@ -116,6 +115,11 @@ p {
   padding: 130px 355px;
 }
 
+.wrapper {
+  width: 730px;
+
+}
+
 /* Hide the checkbox visually but keep it accessible */
 .a11y-toggle {
   position: absolute;
@@ -152,6 +156,9 @@ p {
   justify-content: center;
   gap: var(--space-2);
   white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 140%;
 }
 
 /* Theme icon image */
@@ -194,37 +201,28 @@ p {
   justify-content: space-between;
   gap: var(--space-3);
   padding-block: var(--space-2);
+  width: 730px;
+  height: 52.08px;
 }
 
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
+/* AZEEZ'S STYLING BEGINS` */
 
+.hero-section {
+  padding: 0 355px;
 }
 
 .search_input-container {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: var(--space-4);
   display: flex;
   align-items: center;
+  border-radius: 16px;
 
   height: 69px;
   justify-content: space-between;
-  opacity: 1;
-  padding: 0 20px;
-  border-radius: 16px;
-  background: var(--colors-neutral-0, #FFFFFF);
-  border: 1px solid #E0E0E0;
-  box-shadow: 0px 16px 30px -10px #4660BB33;
-  width: 100% !important;
-  max-width: 595px;
-  box-sizing: border-box;
-
+  padding: 16PX 8px;
+  background: var(--surface);
+  box-shadow: 0px 16px 30px -10px hsl(var(--shadow) / 0.2);
+  width: 730px;
 }
 
 .search_input-container svg {
@@ -236,7 +234,6 @@ p {
   border: none;
   outline: none;
   font-size: 16px;
-  background: white;
   color: #333333;
 }
 
@@ -246,15 +243,17 @@ p {
 }
 
 #search_button {
-  background-color: #1a56db;
+  background-color: #0079FF;
   color: white;
   border: none;
-  padding: 15px 28px;
-  border-radius: 85px;
+  padding: 16px 8px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  width: 107px;
+  height: 48px;
 }
 
 #search_button:hover {
