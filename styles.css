@@ -205,6 +205,12 @@ p {
 
 /* AZEEZ'S STYLING BEGINS` */
 
+.main-content {
+  width: 730px;
+  align-items: center;
+
+}
+
 .hero-section {
   padding: 0 355px;
 }
@@ -251,7 +257,8 @@ p {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  width: 107px; */
+  width: 107px;
+  */
 }
 
 #search_button:hover {
@@ -265,6 +272,204 @@ p {
   min-height: unset !important;
   padding-bottom: 20px !important;
 }
+
+/* styling of the table section */
+.table-container {
+  width: 100%;
+
+}
+
+.Table {
+  width: 730px;
+  margin: 40px auto;
+
+  padding: 16px var(--space-2) 16px var(--space-3);
+  background: var(--surface);
+  box-shadow: 0px 16px 30px -10px hsl(var(--shadow) / 0.2);
+
+  opacity: 1;
+
+}
+
+figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+
+  opacity: 1;
+
+}
+
+#Guides {
+  color: #1a56db;
+
+  opacity: 1;
+  font-family: Inter;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: -2%;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 0 10px 0;
+
+}
+
+#Explore-the-data {
+  color: var(muted);
+
+  text-align: center;
+  opacity: 1;
+
+}
+
+table {
+
+  gap: 24px;
+
+  opacity: 1;
+
+}
+
+caption {
+  color: var(--border);
+
+  margin-bottom: 16px;
+  text-align: start;
+  opacity: 1;
+
+}
+
+.border {
+  width: 100%;
+  opacity: 1;
+  border-width: 2px;
+
+}
+
+.blue {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+  opacity: 1;
+
+
+}
+
+.terrestial {
+  width: 256.1095886230469px;
+  height: 240px;
+
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+  color: var(--accent-ink);
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -2%;
+  text-align: center;
+  vertical-align: middle;
+  top: 210.14px;
+  left: 74.58px;
+  background: var(--accent);
+  opacity: 1;
+  border-width: 2px;
+
+
+}
+
+.M,
+.V,
+.E,
+.Ma {
+  width: 156.60482788085938px;
+  height: 60.38260269165039px;
+  background-color: var(--accent);
+  opacity: 1;
+  top: 100px;
+  left: 256.11px;
+  border-width: 2px;
+
+}
+
+.jovian {
+  width: 129.53732299804688px;
+  height: 247.4696807861328px;
+  background-color: var(--accent);
+  opacity: 1;
+  top: 349.89px;
+  border-width: 2px;
+
+}
+
+.gas {
+  width: 124.42571258544922px;
+  height: 123px;
+  background: var(--accent);
+  ;
+  opacity: 1;
+  top: 350px;
+  left: 131.68px;
+  border-width: 2px;
+
+}
+
+.J,
+.S {
+  width: 156.60482788085938px;
+  height: 60.38260269165039px;
+  background-color: var(--accent);
+  opacity: 1;
+  top: 100px;
+  left: 256.11px;
+  border-width: 2px;
+}
+
+.ice {
+  width: 124.42571258544922;
+  height: 122;
+  top: 475px;
+  border-width: 2px;
+  opacity: 1;
+  background: var(--accent);
+  left: 131.68px;
+  border-width: 2px;
+}
+
+.U,
+.N {
+  width: 156.60482788085938px;
+  height: 60.38260269165039px;
+  background-color: var(--accent);
+  opacity: 1;
+  top: 100px;
+  left: 256.11px;
+  border-width: 2px;
+}
+
+.dwarft {
+  width: 124.42571258544922;
+  height: 122;
+  top: 475px;
+  border-width: 2px;
+  opacity: 1;
+  background: var(--accent);
+  left: 131.68px;
+  border-width: 2px;
+}
+
+.p {
+  width: 156.60482788085938px;
+  height: 60.38260269165039px;
+  background-color: var(--accent);
+  opacity: 1;
+  top: 100px;
+  left: 256.11px;
+  border-width: 2px;
+}
+
+
 
 
 
