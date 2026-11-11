@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    
-    <header class="navbar-container container">
+    <div class="wrapper">
+        <header class="navbar-container">
         <div class="nav-inner">
 
             <a href="#home" class="logo">
@@ -49,64 +49,52 @@
                 </span>
             </label>
         </div>
-    </header>
+        </header>
 
-    <!-- search bar -->
-    <section class="hero-section" container>
+        <main>
+            <!-- search bar -->
+            <section class="hero-section" >
 
-        <div class="search_input-container">
+                <div class="search_input-container">
 
-            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.6084 0C16.458 0 21.2178 4.74645 21.2178 10.5801C21.2177 13.1889 20.2631 15.5782 18.6875 17.4248L23.8018 22.5137C24.142 22.8525 24.1432 23.4035 23.8047 23.7441C23.6349 23.9146 23.4118 24 23.1885 24C22.9665 24 22.745 23.9157 22.5752 23.7471L17.4541 18.6514C15.6049 20.2135 13.216 21.1592 10.6084 21.1592C4.75913 21.159 0.000198647 16.4135 0 10.5801C0 4.74654 4.75896 0.000139792 10.6084 0ZM10.6084 1.73926C5.7178 1.7394 1.73926 5.70538 1.73926 10.5801C1.73948 15.4543 5.71794 19.4198 10.6084 19.4199C13.0218 19.4199 15.2117 18.4528 16.8125 16.8887C16.8278 16.8705 16.8443 16.8531 16.8613 16.8359C16.8813 16.8159 16.9025 16.797 16.9238 16.7793C18.5019 15.1825 19.4784 12.9931 19.4785 10.5801C19.4785 5.70529 15.4991 1.73926 10.6084 1.73926Z" fill="#0079FF"/>
-            </svg>
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.6084 0C16.458 0 21.2178 4.74645 21.2178 10.5801C21.2177 13.1889 20.2631 15.5782 18.6875 17.4248L23.8018 22.5137C24.142 22.8525 24.1432 23.4035 23.8047 23.7441C23.6349 23.9146 23.4118 24 23.1885 24C22.9665 24 22.745 23.9157 22.5752 23.7471L17.4541 18.6514C15.6049 20.2135 13.216 21.1592 10.6084 21.1592C4.75913 21.159 0.000198647 16.4135 0 10.5801C0 4.74654 4.75896 0.000139792 10.6084 0ZM10.6084 1.73926C5.7178 1.7394 1.73926 5.70538 1.73926 10.5801C1.73948 15.4543 5.71794 19.4198 10.6084 19.4199C13.0218 19.4199 15.2117 18.4528 16.8125 16.8887C16.8278 16.8705 16.8443 16.8531 16.8613 16.8359C16.8813 16.8159 16.9025 16.797 16.9238 16.7793C18.5019 15.1825 19.4784 12.9931 19.4785 10.5801C19.4785 5.70529 15.4991 1.73926 10.6084 1.73926Z" fill="#0079FF"/>
+                    </svg>
 
-            <input id="js-planet-input" type="text" placeholder="Search planet name...">
+                    <input id="js-planet-input" type="text" placeholder="Search planet name...">
 
-            <button id="js-search-btn">Search</button>
+                    <button id="js-search-btn">Search</button>
 
-        </div>
+                </div>
 
-        <div id="js-result">
-            <p class="message">Search for a planet to see the details</p>
-        </div>
-    </section>
+                <div id="js-result">
+                    <p class="message">Search for a planet to see the details</p>
+                </div>
+            </section>
+
+            <!-- Planetary Facts Table -->
+            <section>
+                <h1 class="table-heading">
+                    Planetary Facts at a Glance
+                </h1>
+                <p class="table-description">
+                    Below is a comparative table of the major planets in our solar system. The data highlights 
+                    key physical properties used by astronomers and researchers wordwide.
+                </p>
+                <h2 class="table-subheading">
+                    Data about the Planets of our Solar System (planetary facts taken from NASA)
+                </h2>
+            </section>
+        </main>
+    </div>
+    
+
+    
       
         
 
-        <!-- Planetary Facts Table -->
-        <h2 class="table-heading">Planetary Facts at a Glance</h2>
-        <p class="table-description">
-            Below is a comparative table of the major planets in our solar system. The data highlights 
-            key physical properties used by astronomers and researchers to classify and study these celestial bodies wordwide.</p>
-            <h1 class="table-subheading">Data about the Planets of our Solar System {planetary facts taken from NASA}</h1>
-
-        <div class="table-scroll-container">
-            <table class="data-table">gi
-                <thead>
-                    <tr>
-                        <th scope="col">Planet</th>
-                        <th scope="col">Diameter (km)</th>
-                        <th scope="col">
-                            Distance from sun (millions of km)
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="planet-table-body" class="divide-y divide-slate-800">
-                    <tr class="bg-slate-800\70">
-                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
-                            Terrestrial Planets
-                        </th>
-
-                    </tr>
-                    <tr class="bg-slate-800\70">
-                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
-                            Giant Planets
-                            </th>
-                        
-                    </tr>
-                    </tbody>
-            </table>
-        </div> 
+        
+        
 
     <script src="index.js"></script>
 </body>

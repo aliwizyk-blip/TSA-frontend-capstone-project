@@ -15,6 +15,13 @@ themeToggle.addEventListener("change", () => {
     logo.src = isLight
         ? "/images/logo_black.png"
         : "/images/logo.png";
+
+    // Swap images inside the planet card
+    document.querySelectorAll(".mini-stats img").forEach(img => {
+        if (img.dataset.light && img.dataset.dark) {
+            img.src = isLight ? img.dataset.light : img.dataset.dark;
+        }
+      });
 });
 
 // The API endpoint we're pulling planet data from.
@@ -66,38 +73,63 @@ themeToggle.addEventListener("change", () => {
       <div class="card">
         <div class="card-header">
           <img class="planet-photo" src="${planet.image}" alt="${planet.name}" />
+
           <div>
             <p class="planet-name">${planet.name}</p>
             <p class="planet-type">${planet.type}</p>
+            
+            <p class="planet-desc">${planet.description}</p>
+
+            <div class="stat-box">
+              <div>
+                <div class="stat-label">Gravity</div>
+                <div class="stat-value">${planet.gravity}</div>
+              </div>
+              <div>
+                <div class="stat-label">Mass</div>
+                <div class="stat-value">${planet.mass}</div>
+              </div>
+              <div>
+                <div class="stat-label">Period</div>
+                <div class="stat-value">${planet.period}</div>
+              </div>
+            </div>
+
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <span class="icon">
+                  <img 
+                    src="/images/temperature.png"
+                    data-light="/images/tempB.png"
+                    data-dark="/images/temperature.png"
+                    alt=""
+                  >
+                </span> 
+                ${planet.temperature}
+              </div>
+              <div class="mini-stat"><span class="icon">
+                 <img 
+                  src="/images/moon.png"
+                  data-light="/images/moonB.png"
+                  data-dark="/images/moon.png"
+                  alt=""
+                >
+                </span> ${planet.moons}
+              </div>
+              <div class="mini-stat"><span class="icon">&#9679;</span> ${planet.diameter}</div>
+              <div class="mini-stat"><span class="icon">
+               <img 
+                  src="/images/setting.png"
+                  data-light="/images/settingB.png"
+                  data-dark="/images/setting.png"
+                  alt=""
+                ></span> ${planet.distanceFromSun}
+            </div>
+          </div>
+
           </div>
         </div>
-
-        <p class="planet-desc">${planet.description}</p>
-
-        <div class="stat-box">
-          <div>
-            <div class="stat-label">Gravity</div>
-            <div class="stat-value">${planet.gravity}</div>
-          </div>
-          <div>
-            <div class="stat-label">Mass</div>
-            <div class="stat-value">${planet.mass}</div>
-          </div>
-          <div>
-            <div class="stat-label">Period</div>
-            <div class="stat-value">${planet.period}</div>
-          </div>
-        </div>
-
-        <div class="mini-stats">
-          <div class="mini-stat">
-            <span class="icon"><img src="/images/temperature.png" alt=""></span> 
-            ${planet.temperature}
-          </div>
-          <div class="mini-stat"><span class="icon"><img src="/images/moon.png" alt=""></span> ${planet.moons}</div>
-          <div class="mini-stat"><span class="icon">&#9679;</span> ${planet.diameter}</div>
-          <div class="mini-stat"><span class="icon"><img src="/images/setting.png" alt=""></span> ${planet.distanceFromSun}</div>
-        </div>
+        
       </div>
     `;
   }
