@@ -65,6 +65,7 @@ ul {
 /* Light theme */
 :root.light-theme {
   --bg: #F6F8FF;
+  --bg: #F6F8FF;
   --surface: #ffffff;
   --surface-2: #1b1f1d;
   --card-bg: #ffffff;
@@ -148,6 +149,9 @@ h3 {
   font-size: 13px;
   font-weight: 700;
   line-height: 140%;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 140%;
 }
 
 .theme-switch__icon img {
@@ -190,9 +194,12 @@ h3 {
   justify-content: space-between;
   gap: var(--space-3);
   padding-block: var(--space-2);
+  width: 730px;
+  height: 52.08px;
 }
 
 .search_input-container {
+  margin-top: var(--space-4);
   margin-top: var(--space-4);
   display: flex;
   align-items: center;
