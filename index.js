@@ -1,93 +1,3 @@
-const planetSelect = document.getElementById('planet-select');
-const planetTableBody = document.getElementById('planet-table-body');
-const searchInput = document.getElementById('search-input');
-
-
-const planetImage = document.getElementById('planet-image');
-const planetName = document.getElementById('planet-name');
-const planetDescription = document.getElementById('planet-describtion');
-
-let allPlanets = [];
-
-async function fetchPlanets() {
-    const url = 'https://anurella.github.io/json/planet.json';
-    try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-
-        allPlanets = await response.json();
-
-
-        renderTable(allPlanets);
-        setupDropdownListener();
-        setupSearchFilter();
-
-    } catch (error) {
-        console.error('Failed to fetch planet data:', error);
-    }
-}
-
-function renderTable(planetsArray) {
-
-    planetTableBody.InnerHTML = '';
-
-    planetsArray.forEach(Planet => {
-        const row = `
-    <tr class="hover:bg-slate-900/50 transition-colors>
-    <td class="px-4 py-3 text-white font-medium">${planet.name}</td>
- <td class="px-4 py-3 text-state-300">${planet.diameter}</td>
-  <td class="px-4 py-3 text-state-300">${planet.distance}</td>
-  </tr>
-    `;
-        planetTableBody.insertAdjacentHTML('beforeend', row);
-    });
-}
-
-function updatefeatureCard(planet) {
-    if (!planet) return;
-
-    planetName.innerText = planet.name;
-    planetDescription.innerText = planet.description || `Data details regarding the planet ${planet.name}.`;
-    if (planet.image) {
-        planetImage.src = planet.image;
-        planetImage.alt = `planet ${planet.name}`;
-    }
-
-}
-
-function setupDropdownListener() {
-    planetSelect.addEventListener('change', (e) => {
-        const selectedValue = e.target.value.toLowerCase();
-
-        const chosenPlanet = allPlanets.find(p => p.name.tolowerCase() === selectedValue);
-
-        if (chosenPlanet) {
-            updatefeatureCard(chosenPlanet);
-        }
-    });
-}
-
-
-function setupSearchFilter() {
-    if (!searchInput) return;
-
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase().trim();
-
-        const filteredPlanets = allPlanets.filter(planet =>
-            planet.name.tolowerCase().includes(searchTerm)
-        );
-
-
-        renderTable(filteredplanets);
-    });
-
-}
-fetchPlanets();
 
 const themeToggle = document.querySelector("#theme-toggle");
 const logo = document.querySelector("#site-logo");
@@ -105,4 +15,156 @@ themeToggle.addEventListener("change", () => {
     logo.src = isLight
         ? "/images/logo_black.png"
         : "/images/logo.png";
+
+    // Swap images inside the planet card
+    document.querySelectorAll(".mini-stats img").forEach(img => {
+        if (img.dataset.light && img.dataset.dark) {
+            img.src = isLight ? img.dataset.light : img.dataset.dark;
+        }
+      });
 });
+
+// The API endpoint we're pulling planet data from.
+  const API_URL = "https://anurella.github.io/json/planet.json";
+
+  // We'll store the fetched array here once, so we don't re-fetch on every search.
+  let planets = [];
+
+   // Grab references to the elements we need to work with.
+  const input = document.getElementById("js-planet-input");
+  const button = document.getElementById("js-search-btn");
+  const resultDiv = document.getElementById("js-result");
+
+  // --- Step 1: fetch the data as soon as the page loads ---
+  async function loadPlanets() {
+    try {
+      const response = await fetch(API_URL);
+
+      if (!response.ok) throw new Error("Network response was not ok");
+
+      // Fetch and store planet data
+      planets = await response.json();
+
+      // Display Earth automatically when the page loads
+      const defaultPlanet = findPlanet("Earth");
+
+      if (defaultPlanet) {
+        renderPlanet(defaultPlanet);
+      }
+
+      // Keep the search input empty
+      input.value = "";
+
+    } catch (err) {
+      resultDiv.innerHTML = `<p class="message">Couldn't load planet data. Please refresh.</p>`;
+      console.error(err);
+    }
+  }
+
+// --- Step 2: find a planet by name (case-insensitive) ---
+  function findPlanet(name) {
+    const planetName = name.trim().toLowerCase();
+    return planets.find(p => p.name.toLowerCase() === planetName);
+  }
+
+// --- Step 3: build the card's HTML from a planet object ---
+  function renderPlanet(planet) {
+    resultDiv.innerHTML = `
+      <div class="card">
+        <div class="card-header">
+          <img class="planet-photo" src="${planet.image}" alt="${planet.name}" />
+
+          <div>
+            <p class="planet-name">${planet.name}</p>
+            <p class="planet-type">${planet.type}</p>
+            
+            <p class="planet-desc">${planet.description}</p>
+
+            <div class="stat-box">
+              <div>
+                <div class="stat-label">Gravity</div>
+                <div class="stat-value">${planet.gravity}</div>
+              </div>
+              <div>
+                <div class="stat-label">Mass</div>
+                <div class="stat-value">${planet.mass}</div>
+              </div>
+              <div>
+                <div class="stat-label">Period</div>
+                <div class="stat-value">${planet.period}</div>
+              </div>
+            </div>
+
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <span class="icon">
+                  <img 
+                    src="/images/temperature.png"
+                    data-light="/images/tempB.png"
+                    data-dark="/images/temperature.png"
+                    alt=""
+                  >
+                </span> 
+                ${planet.temperature}
+              </div>
+              <div class="mini-stat"><span class="icon">
+                 <img 
+                  src="/images/moon.png"
+                  data-light="/images/moonB.png"
+                  data-dark="/images/moon.png"
+                  alt=""
+                >
+                </span> ${planet.moons}
+              </div>
+              <div class="mini-stat"><span class="icon">&#9679;</span> ${planet.diameter}</div>
+              <div class="mini-stat"><span class="icon">
+               <img 
+                  src="/images/setting.png"
+                  data-light="/images/settingB.png"
+                  data-dark="/images/setting.png"
+                  alt=""
+                ></span> ${planet.distanceFromSun}
+            </div>
+          </div>
+
+          </div>
+        </div>
+        
+      </div>
+    `;
+  }
+
+  // --- Step 4: what happens when the user searches ---
+function handleSearch() {
+  const name = input.value.trim();
+
+  if (!name) return;
+
+  const planet = findPlanet(name);
+
+  if (planet) {
+    renderPlanet(planet);
+
+    // Clear the input after a successful search
+    input.value = "";
+  } else {
+    resultDiv.innerHTML = `
+      <p class="message">
+        No planet found called "${name}".
+        Try Mercury, Venus, Earth, Mars, Jupiter, Saturn,
+        Uranus, Neptune, or Pluto.
+      </p>
+    `;
+  }
+}
+
+  // Trigger search on button click...
+  button.addEventListener("click", handleSearch);
+
+  // ...or when the user presses Enter inside the input.
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") handleSearch();
+  });
+
+  // Kick things off.
+  loadPlanets();

@@ -13,7 +13,7 @@
 
 <body>
     <div class="wrapper">
-        <header class="navbar-container container">
+        <header class="navbar-container">
         <div class="nav-inner">
 
             <a href="#home" class="logo">
@@ -49,108 +49,154 @@
                     <span class="theme-switch__thumb"></span>
 
                 </span>
-                </label>
-            </div>
+            </label>
+        </div>
         </header>
 
-        <!-- search bar -->
-        <section class="hero-section">
+        <main>
+            <!-- search bar -->
+            <section class="hero-section" >
 
-            <div class="search_input-container">
+                <div class="search_input-container">
 
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10.6084 0C16.458 0 21.2178 4.74645 21.2178 10.5801C21.2177 13.1889 20.2631 15.5782 18.6875 17.4248L23.8018 22.5137C24.142 22.8525 24.1432 23.4035 23.8047 23.7441C23.6349 23.9146 23.4118 24 23.1885 24C22.9665 24 22.745 23.9157 22.5752 23.7471L17.4541 18.6514C15.6049 20.2135 13.216 21.1592 10.6084 21.1592C4.75913 21.159 0.000198647 16.4135 0 10.5801C0 4.74654 4.75896 0.000139792 10.6084 0ZM10.6084 1.73926C5.7178 1.7394 1.73926 5.70538 1.73926 10.5801C1.73948 15.4543 5.71794 19.4198 10.6084 19.4199C13.0218 19.4199 15.2117 18.4528 16.8125 16.8887C16.8278 16.8705 16.8443 16.8531 16.8613 16.8359C16.8813 16.8159 16.9025 16.797 16.9238 16.7793C18.5019 15.1825 19.4784 12.9931 19.4785 10.5801C19.4785 5.70529 15.4991 1.73926 10.6084 1.73926Z" fill="#0079FF"/>
-                </svg>
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.6084 0C16.458 0 21.2178 4.74645 21.2178 10.5801C21.2177 13.1889 20.2631 15.5782 18.6875 17.4248L23.8018 22.5137C24.142 22.8525 24.1432 23.4035 23.8047 23.7441C23.6349 23.9146 23.4118 24 23.1885 24C22.9665 24 22.745 23.9157 22.5752 23.7471L17.4541 18.6514C15.6049 20.2135 13.216 21.1592 10.6084 21.1592C4.75913 21.159 0.000198647 16.4135 0 10.5801C0 4.74654 4.75896 0.000139792 10.6084 0ZM10.6084 1.73926C5.7178 1.7394 1.73926 5.70538 1.73926 10.5801C1.73948 15.4543 5.71794 19.4198 10.6084 19.4199C13.0218 19.4199 15.2117 18.4528 16.8125 16.8887C16.8278 16.8705 16.8443 16.8531 16.8613 16.8359C16.8813 16.8159 16.9025 16.797 16.9238 16.7793C18.5019 15.1825 19.4784 12.9931 19.4785 10.5801C19.4785 5.70529 15.4991 1.73926 10.6084 1.73926Z" fill="#0079FF"/>
+                    </svg>
 
+                    <input id="js-planet-input" type="text" placeholder="Search planet name...">
 
-                <input type="text" placeholder="Search planet name..." id="search_input">
-                <button id="search_button">Search</button>  
+                    <button id="js-search-btn">Search</button>
+
+                </div>
+
+                <div id="js-result">
+                    <p class="message">Search for a planet to see the details</p>
+                </div>
+            </section>
+
+            <!-- Planetary Facts Table -->
+            <section>
+                <h1 class="table-heading">
+                    Planetary Facts at a Glance
+                </h1>
+                <p class="table-description">
+                    Below is a comparative table of the major planets in our solar system. The data highlights 
+                    key physical properties used by astronomers and researchers wordwide.
+                </p>
+                <h2 class="table-subheading">
+                    Data about the Planets of our Solar System (planetary facts taken from NASA)
+                </h2>
+
+                <!-- The table and the content -->
+                 
+                <table class="border" >
+      <caption> <strong>Data about the planets of our solar system (Planetary facts taken from Nasa)</strong></caption>
+  
+        <thead class="blue">
+            <tr>
+                <th scope="col" colspan="2"></th>
+                <th scope="col">Name</th>
+               <th scope="col">Mass(10 24kg)</th>
+                <th scope="col">Diameter(km)</th>
+             
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="M">
+               
+                <th class="terrestial" scope="row" rowspan="4" colspan="2">Terrestial Planets</th>
+
+                <td>Mercury</td>
+                <td>0.330</td>
+                <td>4,878</td>
+                
+              
+            </tr>
+            <tr class="V">
             
+                
+                <td>Venus</td>
+                <td>0.330</td>
+                <td>4,878</td>
+                
+            </tr>
+            <tr class="E">
+              
+                <td>Earth</td>
+                <td>0.330</td>
+                <td>4,878</td>
+                
+            </tr>
+            <tr class="Ma">
+         
+               <td>Mars</td>
+                <td>0.330</td>
+                <td>4,878</td>
+            </tr>
+                
+          
+                     
+        
+                 
             
-
-            </div>
-        </section>
+             <tr class="J">
+              <th class="jovian"
+                    cope="row" rowspan="4">Jovian<br> PLanets</th>
+    <th class="gas" scope="col" rowspan="2">Gas Giants</th> 
+                <td>Jupiter</td>
+                <td>0.330</td>
+                <td>4,878</td>
+               
+            </tr>
+              
+                  <tr class="S">
+               
+                <td>Saturn</td>
+                <td>0.330</td>
+                <td>4,878</td>
+                
+            </tr>
+                  
+          
+              
+              <tr class="U"> 
+                <th class="ice" scope="row" rowspan="2">Ice Giants</th> 
+               <td>Uranus</td>
+                <td>0.330</td>
+                <td>4,878</td>
+               
+                
+            </tr>
+            <tr class="N">
+            
+                <td>Neptune</td>
+                <td>0.330</td>
+                <td>4,878</td>
+                
+            </tr>
+     <tr class="p">
+  <th class="dwarft" scope=scope="row" rowspan="1" colspan="2">Dwarf PLanets</th>
+        
+                 
+                 
+                <td>PLuto</td>
+                <td>0.330</td>
+                <td>4,878</td>
+                
+            </tr>
+        </tbody>
+    </table>
+            </section>
+        </main>
     </div>
     
+
+    
       
-        <!-- <section id="planet-dashboard" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <h2 class="text-lg font-semibold">Planets</h2>
-                <div class="flex items-center gap-2">
-                    <label for="planet-select" class="text-sm font-medium">Select a planet:</label>
-                    <select id="planet-select"
-                        class="rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-white focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
-                        <option value="">--Choose a planet--</option>
-                        <option value="mercury">Mercury</option>
-                        <option value="venus">Venus</option>
-                        <option value="earth">Earth</option>
-                        <option value="mars">Mars</option>
-                        <option value="jupiter">Jupiter</option>
-                        <option value="saturn">Saturn</option>
-                        <option value="uranus">Uranus</option>
-                        <option value="neptune">Neptune</option>
-                    </select>
-                </div>
-        </section>
-        <section id="Planet-feature" class="mb-10 rounded-2xl border border-slate-800 bg-slate-900 sm:p-8">
-            <h2 class="mb-6 text-2xl font-bold">Earth </h2>
-            <div class="flex flex-col items-center gap-6 
-            sm:flex-row">
-                <div class="shrink-0">
-                    <img id="planet-image" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=400"
-                        alt="Planet Earth" class="h-40 w-40 rounded-full object-cover">
-                </div>
+        
 
-                <div class="content-wrapper">
-                    <p class="planet-type-badge">Terrestrial Planet</p>
-
-                    <h2 id="planet-name" class="planet-display-name">
-                        Earth
-                    </h2>
-
-                    <p id="planet-description" class="planet-info-text">
-                        Earth is our home planet and the third planet from
-                        the sun. It is the only planet currently known to
-                        support life.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-         Planetary Facts Table
-        <h2 class="table-heading">Planetary Facts at a Glance</h2>
-        <p class="table-description">
-            Below is a comparative table of the major planets in our solar system. The data highlights 
-            key physical properties used by astronomers and researchers to classify and study these celestial bodies wordwide.</p>
-            <h1 class="table-subheading">Data about the Planets of our Solar System {planetary facts taken from NASA}</h1>
-
-        <div class="table-scroll-container">
-            <table class="data-table">gi
-                <thead>
-                    <tr>
-                        <th scope="col">Planet</th>
-                        <th scope="col">Diameter (km)</th>
-                        <th scope="col">
-                            Distance from sun (millions of km)
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="planet-table-body" class="divide-y divide-slate-800">
-                    <tr class="bg-slate-800\70">
-                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
-                            Terrestrial Planets
-                        </th>
-
-                    </tr>
-                    <tr class="bg-slate-800\70">
-                        <th colspan="4" scope="colgroup" class="px-4 py-3 text-sky-400">
-                            Giant Planets
-                            </th>
-                        
-                    </tr>
-                    </tbody>
-            </table>
-        </div> -->
+        
+        
 
     <script src="index.js"></script>
 </body>
