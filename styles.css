@@ -379,6 +379,7 @@ h3 {
 
 td {
   padding-left: 35px;
+  border: 2px solid #FFFFFF;
 }
 
 .border {
@@ -387,20 +388,35 @@ td {
 
   opacity: 1;
   top: 37px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 
 }
 
 .blue {
   width: 256.1095886230469px;
   height: 60px;
-  background-color: #1a56db;
+  background-color: #141D2F;
+  ;
   color: var(--accent-ink);
   opacity: 1;
   top: 38.08px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
   border-top-left-radius: 16px;
 
+}
+
+.white {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -2%;
+  text-align: center;
+  vertical-align: middle;
+
+  color: #D1E3FF;
+  border: solid white;
 }
 
 .terrestial {
@@ -418,9 +434,10 @@ td {
   vertical-align: middle;
   top: 210.14px;
   left: 74.58px;
-  background: #D1E3FF;
+  background: #90A4D4;
+  ;
   opacity: 1;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 
 
 }
@@ -436,28 +453,29 @@ td {
   opacity: 1;
   top: 100px;
   left: 256.11px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 
 }
 
 .jovian {
   width: 129.53732299804688px;
   height: 247.4696807861328px;
-  background-color: #D1E3FF;
+  background-color: #90A4D4;
+  ;
   opacity: 1;
   top: 349.89px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 
 }
 
 .gas {
   width: 124.42571258544922px;
   height: 123px;
-  background: #D1E3FF;
+  background: #90A4D4;
   opacity: 1;
   top: 350px;
   left: 131.68px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 
 }
 
@@ -470,18 +488,18 @@ td {
   opacity: 1;
   top: 100px;
   left: 256.11px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 }
 
 .ice {
   width: 124.42571258544922;
   height: 122;
   top: 475px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
   opacity: 1;
-  background: #D1E3FF;
+  background: #90A4D4;
   left: 131.68px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 }
 
 .U,
@@ -493,18 +511,18 @@ td {
   opacity: 1;
   top: 100px;
   left: 256.11px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 }
 
 .dwarft {
   width: 124.42571258544922;
   height: 122;
   top: 475px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
   opacity: 1;
-  background: #D1E3FF;
+  background: #90A4D4;
   left: 131.68px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 }
 
 .p {
@@ -515,7 +533,7 @@ td {
   opacity: 1;
   top: 100px;
   left: 256.11px;
-  border-width: 2px;
+  border: 2px solid #FFFFFF;
 }
 
 */
