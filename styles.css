@@ -535,22 +535,7 @@ td {
   left: 256.11px;
   border: 2px solid #FFFFFF;
 }
-
-*/
-/* Tablets */
-@media (max-width: 768px) {
-  .wrapper {
-    padding: 50px 30px;
-  }
-}
-
-/* Mobile phones */
-@media (max-width: 480px) {
-  .wrapper {
-    padding: 30px 20px;
-  }
-}
-/* FOOTER SECTION */
+/* FOOTER SECTION by Hadiyah*/
 .footer {
   display: flex;
   justify-content: space-between;
@@ -578,5 +563,19 @@ td {
   .footer {
     flex-direction: column;
     gap: 24px;
+  }
+}
+*/
+/* Tablets */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 50px 30px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 30px 20px;
   }
 }
