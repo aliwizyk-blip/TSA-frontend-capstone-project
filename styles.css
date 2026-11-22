@@ -535,36 +535,51 @@ td {
   left: 256.11px;
   border: 2px solid #FFFFFF;
 }
+
 /* FOOTER SECTION by Hadiyah*/
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+
+  /* change to center */
+  margin-left: auto;
+  margin-right: auto;
+
+
   gap: 30px;
-  margin-top: 60px;
+  margin-top: var(--space-4);
   padding: 24px 0 40px;
   color: #526b93;
   font-size: 18px;
   line-height: 1.6;
+  width: 730px;
+  height: 52.08px
 }
+
 .footer-about,
 .footer-credit {
+
   flex: 1;
+
 }
+
 .footer h3 {
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 24px;
 }
+
 .footer p {
   margin: 0 0 4px;
 }
+
 @media (max-width: 600px) {
   .footer {
     flex-direction: column;
     gap: 24px;
   }
 }
+
 */
 /* Tablets */
 @media (max-width: 768px) {
