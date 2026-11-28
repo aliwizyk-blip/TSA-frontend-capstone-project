@@ -195,7 +195,7 @@ h3 {
   justify-content: space-between;
   gap: var(--space-3);
   padding-block: var(--space-2);
-  width: 730px;
+  /* width: 730px; */
   height: 52.08px;
 }
 
@@ -270,7 +270,33 @@ h3 {
   box-shadow: 0px 16px 30px -10px hsl(var(--shadow) / 0.2);
 }
 
+/* Desktop layout */
 .card-header {
+  display: grid; 
+  grid-template-columns: 130px minmax(0, 1fr);
+  grid-template-rows: auto 1fr; 
+  column-gap: 20px; 
+  align-items: start; 
+}
+
+.planet-heading {
+  display: contents;
+}
+
+.planet-title {
+  grid-column: 2; 
+  grid-row: 1; 
+  align-self: center;
+}
+
+/* Added: Place description, stats and mini-stats below the title */
+.planet-info {
+  grid-column: 2; 
+  grid-row: 2; 
+  min-width: 0; 
+}
+
+.planet-heading {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: var(--space-3);
@@ -295,7 +321,6 @@ h3 {
 .planet-type {
   color: #0079FF;
   font-size: 14px;
-  margin-bottom: var(--space-3);
   font-weight: 500;
 }
 
@@ -304,7 +329,7 @@ h3 {
   font-size: 15px;
   line-height: 1.5;
   letter-spacing: 0.2rem;
-  margin: var(--space-2) 0 var(--space-3);
+  margin: 0 0 var(--space-3);
   opacity: 0.7;
 }
 
@@ -408,8 +433,6 @@ td {
   border: solid white;
 }
 
-/* Ensure the parent table allows rounded corners */
-/* Ensure the parent table allows rounded corners and expands full width */
 table {
   width: 100%;
   border-collapse: separate;
@@ -557,8 +580,8 @@ footer {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: start;
-  
   padding: 0 20%;
+  margin-bottom: var(--space-4);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -592,20 +615,89 @@ footer {
   color: var(--text-main);
 }
 
-/* Tablets */
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
   .wrapper {
-    padding: 50px 30px;
+    padding: 20px 5%;
   }
 }
 
-/* Mobile phones */
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 768px) {
   .wrapper {
-    padding: 80px 3% 40px;
+    padding: 20px 4%;
+  }
+  
+  .stat-box {
+    flex-wrap: wrap; 
+    gap: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .planet-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .planet-photo {
+    flex-shrink: 0;
+  }
+
+  .planet-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .stat-box {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mini-stats {
+    grid-template-columns: auto;
+    gap: var(--space-2);
+  }
+
+  table {
+  table-layout: auto; /* Added: Allow columns to adjust automatically */
+  }
+
+  /* Give header and data cells enough space */
+  th, td {
+    padding: 12px 20px;
+    white-space: nowrap;
+  }
+
+  /* Round the top-left corner */
+  thead.blue tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+  }
+
+  /* Round the top-right corner */
+  thead.blue tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+  }
+  
+  table {
+    width: 100%; /* Added: Restrict table to available screen width */
+    font-size: 12px; /* Added: Slightly reduce text size */
+  }
+
+  th, td {
+    padding: 8px 6px; /* Added: Reduce horizontal and vertical spacing */
+    white-space: normal; /* Added: Allow text to wrap when necessary */
   }
 
   footer {
-    padding: 0 5%;
+    padding: 20px 5%;
   }
 }

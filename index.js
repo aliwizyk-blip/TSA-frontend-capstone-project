@@ -72,12 +72,21 @@ themeToggle.addEventListener("change", () => {
     resultDiv.innerHTML = `
       <div class="card">
         <div class="card-header">
-          <img class="planet-photo" src="${planet.image}" alt="${planet.name}" />
 
-          <div>
-            <p class="planet-name">${planet.name}</p>
-            <p class="planet-type">${planet.type}</p>
-            
+          <!-- Added: Wrap image, name, and type in one container -->
+          <div class="planet-heading">
+            <img class="planet-photo" src="${planet.image}" alt="${planet.name}" />
+
+            <!-- Added: Group name and type together -->
+            <div class="planet-title">
+              <p class="planet-name">${planet.name}</p>
+              <p class="planet-type">${planet.type}</p>
+            </div>
+          </div>
+
+          <!-- Moved: Everything else outside planet-heading -->
+          <div class="planet-info">
+
             <p class="planet-desc">${planet.description}</p>
 
             <div class="stat-box">
@@ -98,38 +107,48 @@ themeToggle.addEventListener("change", () => {
             <div class="mini-stats">
               <div class="mini-stat">
                 <span class="icon">
-                  <img 
+                  <img
                     src="/images/temperature.png"
                     data-light="/images/tempB.png"
                     data-dark="/images/temperature.png"
                     alt=""
                   >
-                </span> 
+                </span>
                 ${planet.temperature}
               </div>
-              <div class="mini-stat"><span class="icon">
-                 <img 
-                  src="/images/moon.png"
-                  data-light="/images/moonB.png"
-                  data-dark="/images/moon.png"
-                  alt=""
-                >
-                </span> ${planet.moons}
+
+              <div class="mini-stat">
+                <span class="icon">
+                  <img
+                    src="/images/moon.png"
+                    data-light="/images/moonB.png"
+                    data-dark="/images/moon.png"
+                    alt=""
+                  >
+                </span>
+                ${planet.moons}
               </div>
-              <div class="mini-stat"><span class="icon">&#9679;</span> ${planet.diameter}</div>
-              <div class="mini-stat"><span class="icon">
-               <img 
-                  src="/images/setting.png"
-                  data-light="/images/settingB.png"
-                  data-dark="/images/setting.png"
-                  alt=""
-                ></span> ${planet.distanceFromSun}
+
+              <div class="mini-stat">
+                <span class="icon">&#9679;</span>
+                ${planet.diameter}
+              </div>
+
+              <div class="mini-stat">
+                <span class="icon">
+                  <img
+                    src="/images/setting.png"
+                    data-light="/images/settingB.png"
+                    data-dark="/images/setting.png"
+                    alt=""
+                  >
+                </span>
+                ${planet.distanceFromSun}
+              </div>
             </div>
-          </div>
 
           </div>
         </div>
-        
       </div>
     `;
   }
