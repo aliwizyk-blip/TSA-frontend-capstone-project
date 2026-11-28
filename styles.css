@@ -36,7 +36,7 @@ ul {
   --ink: #edeae2;
   --text-main: #FFFFFF;
   --muted: #98a3ab;
-  --accent: #4d8dff;
+  --accent: #141D2F;
   --accent-ink: #0c1512;
   --border: #22305e;
   --shadow: 190 60% 4%;
@@ -75,6 +75,7 @@ ul {
   --stat-bg: #F6F8FF;
   --shadow: 220 20% 20%;
   --table-heading: #164BAF;
+  --accent: #164BAF;
 }
 
 /* Text selection */
@@ -108,7 +109,7 @@ h3 {
   max-width: 1440px;
   min-height: 100vh;
   margin-inline: auto;
-  padding: 80px 20%;
+  padding: 80px 20% 40px;
   box-sizing: border-box;
 }
 
@@ -194,7 +195,7 @@ h3 {
   justify-content: space-between;
   gap: var(--space-3);
   padding-block: var(--space-2);
-  width: 730px;
+  /* width: 730px; */
   height: 52.08px;
 }
 
@@ -269,7 +270,33 @@ h3 {
   box-shadow: 0px 16px 30px -10px hsl(var(--shadow) / 0.2);
 }
 
+/* Desktop layout */
 .card-header {
+  display: grid; 
+  grid-template-columns: 130px minmax(0, 1fr);
+  grid-template-rows: auto 1fr; 
+  column-gap: 20px; 
+  align-items: start; 
+}
+
+.planet-heading {
+  display: contents;
+}
+
+.planet-title {
+  grid-column: 2; 
+  grid-row: 1; 
+  align-self: center;
+}
+
+/* Added: Place description, stats and mini-stats below the title */
+.planet-info {
+  grid-column: 2; 
+  grid-row: 2; 
+  min-width: 0; 
+}
+
+.planet-heading {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: var(--space-3);
@@ -294,7 +321,6 @@ h3 {
 .planet-type {
   color: #0079FF;
   font-size: 14px;
-  margin-bottom: var(--space-3);
   font-weight: 500;
 }
 
@@ -303,7 +329,7 @@ h3 {
   font-size: 15px;
   line-height: 1.5;
   letter-spacing: 0.2rem;
-  margin: var(--space-2) 0 var(--space-3);
+  margin: 0 0 var(--space-3);
   opacity: 0.7;
 }
 
@@ -375,30 +401,19 @@ h3 {
 .table-subheading {
   color: var(--surface-2);
   font-family: 168px;
+  margin-bottom: var(--space-3);
 }
 
 td {
   padding-left: 35px;
-  border: 2px solid #FFFFFF;
-}
-
-.border {
-  width: 730px;
-  height: 623px;
-
-  opacity: 1;
-  top: 37px;
-  border: 2px solid #FFFFFF;
-
+  border: 2px solid #F2F7FF;
 }
 
 .blue {
   width: 256.1095886230469px;
   height: 60px;
-  background-color: #141D2F;
-  ;
+  background-color: var(--accent);
   color: var(--accent-ink);
-  opacity: 1;
   top: 38.08px;
   border: 2px solid #FFFFFF;
   border-top-left-radius: 16px;
@@ -408,7 +423,6 @@ td {
 .white {
   font-family: var(--font-body);
   font-weight: 700;
-  font-style: Bold;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -2%;
@@ -419,13 +433,40 @@ td {
   border: solid white;
 }
 
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Give header and data cells enough space so text doesn't wrap tightly */
+th, td {
+  padding: 12px 20px;
+  white-space: nowrap;
+}
+
+/* Round the top-left corner */
+thead.blue tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+}
+
+/* Round the top-right corner */
+thead.blue tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+}
+
+
 .terrestial {
   width: 256.1095886230469px;
   height: 240px;
 
   font-family: var(--font-body);
   font-weight: 700;
-  font-style: Bold;
+  font-weight: Bold;
   color: #212121;
   font-size: 16px;
   line-height: 150%;
@@ -435,8 +476,6 @@ td {
   top: 210.14px;
   left: 74.58px;
   background: #90A4D4;
-  ;
-  opacity: 1;
   border: 2px solid #FFFFFF;
 
 
@@ -537,59 +576,128 @@ td {
 }
 
 /* FOOTER SECTION by Hadiyah*/
-.footer {
-  display: flex;
-  justify-content: space-between;
-
-  /* change to center */
-  margin-left: auto;
-  margin-right: auto;
-
-
-  gap: 30px;
-  margin-top: var(--space-4);
-  padding: 24px 0 40px;
-  color: #526b93;
-  font-size: 18px;
-  line-height: 1.6;
-  width: 730px;
-  height: 52.08px
+footer {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+  padding: 0 20%;
+  margin-bottom: var(--space-4);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.footer-about,
-.footer-credit {
-
-  flex: 1;
-
+.footer-about {
+  display: grid;
+  gap: 1.25rem;
 }
 
-.footer h3 {
-  font-size: 24px;
+.footer-about h3 {
+  margin: 0;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin: 0 0 24px;
+  color: var(--text-main);
 }
 
-.footer p {
-  margin: 0 0 4px;
+.footer-about p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-main);
 }
 
-@media (max-width: 600px) {
-  .footer {
-    flex-direction: column;
-    gap: 24px;
+.footer-credit {
+  display: grid;
+  justify-self: start;
+}
+
+.footer-credit p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 20px 5%;
   }
 }
 
-/* Tablets */
+/* Mobile */
 @media (max-width: 768px) {
   .wrapper {
-    padding: 50px 30px;
+    padding: 20px 4%;
   }
-}
+  
+  .stat-box {
+    flex-wrap: wrap; 
+    gap: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
 
-/* Mobile phones */
-@media (max-width: 480px) {
-  .wrapper {
-    padding: 30px 20px;
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .planet-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .planet-photo {
+    flex-shrink: 0;
+  }
+
+  .planet-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .stat-box {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mini-stats {
+    grid-template-columns: auto;
+    gap: var(--space-2);
+  }
+
+  table {
+  table-layout: auto; /* Added: Allow columns to adjust automatically */
+  }
+
+  /* Give header and data cells enough space */
+  th, td {
+    padding: 12px 20px;
+    white-space: nowrap;
+  }
+
+  /* Round the top-left corner */
+  thead.blue tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+  }
+
+  /* Round the top-right corner */
+  thead.blue tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+  }
+  
+  table {
+    width: 100%; /* Added: Restrict table to available screen width */
+    font-size: 12px; /* Added: Slightly reduce text size */
+  }
+
+  th, td {
+    padding: 8px 6px; /* Added: Reduce horizontal and vertical spacing */
+    white-space: normal; /* Added: Allow text to wrap when necessary */
+  }
+
+  footer {
+    padding: 20px 5%;
   }
 }
